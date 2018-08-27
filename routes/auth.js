@@ -12,15 +12,14 @@ router.get('/sign-up', (req, res, next) => {
 
 router.post('/sign-up', (req, res, next) => {
   const { email, password } = req.body
-  // if (!email.required || !password.required) return res.render('sign-up', { error: 'Need to enter information' })
-
-  // if (email.unique!==true) return res.render('sign-up', { error: 'Name already taken' })
-
+ 
   const encrypted = bcrypt.hashSync(password, 10)
 
   new User({ email, password: encrypted }).save().then(result => {
     res.send('User account was created')
   })
+  .catch(error)
+  console.log(error)
 });
 
 //SIGN-IN

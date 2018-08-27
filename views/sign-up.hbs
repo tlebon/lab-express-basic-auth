@@ -1,3 +1,7 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="strength.js"></script>
+<script type="text/javascript" src="js.js"></script>
+
 <div class="container">
 
     <div class="card">
@@ -6,7 +10,7 @@
         <form action="/auth/sign-up" method='POST'>
             <input type="email" name='email' required='true'>
             <br>
-            <input type="password" name='password' required='true'>
+            <input id="myPassword" type="password" name='password' required='true'>
             <br>
             <br>
             <button type='submit'>Create my User Account</button>
@@ -17,3 +21,4 @@
             {{/if}}
     </div>
 </div>
+
